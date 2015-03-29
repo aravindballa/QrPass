@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+  <meta name="description" content="QR Code scanner" />
+  <meta name="keywords" content="qrcode,qr code,scanner,barcode,javascript" />
+  <meta name="language" content="English" />
+  <meta name="copyright" content="Lazar Laszlo (c) 2011" />
+  <meta name="Revisit-After" content="1 Days"/>
+  <meta name="robots" content="index, follow"/>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>HomePage</title>
+
+  <!-- CSS  -->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- JS -->
+  <script type="text/javascript" src="llqrcode.js"></script>
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+  <script type="text/javascript" src="webqr.js"></script>
+
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24451557-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+
+    <style type="text/css">
+    
+    }
+    img{
+        border:0;
+    }
+    #mainbody{
+        background: white;
+        width:100%;
+      display:none;
+    }
+    
+    #v{
+        width:320px;
+        height:240px;
+    }
+    #qr-canvas{
+        display:none;
+    }
+    #qrfile{
+        width:320px;
+        height:240px;
+    }
+    #mp1{
+        text-align:center;
+        font-size:35px;
+    }
+    #imghelp{
+        position:relative;
+        left:0px;
+        top:-160px;
+        z-index:100;
+        font:18px arial,sans-serif;
+        background:#f0f0f0;
+      margin-left:35px;
+      margin-right:35px;
+      padding-top:10px;
+      padding-bottom:10px;
+      border-radius:20px;
+    }
+    .selector{
+        margin:0;
+        padding:0;
+        cursor:pointer;
+        margin-bottom:-5px;
+    }
+    #outdiv
+    {
+        width:320px;
+        height:240px;
+      border: solid;
+      border-width: 3px 3px 3px 3px;
+    }
+    #result{
+        border: solid;
+      border-width: 1px 1px 1px 1px;
+      padding:20px;
+      width:70%;
+    }
+    .tsel{
+        padding:0;
+    }
+
+    </style>
+
+
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="container">
+      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right">
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      </div>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center green-text">Scan the code</h1>
+  </div>
+
+
+  <div class="container">
+
+    <div id="mainbody">
+      <table class="tsel centered" border="0" width="100%">
+        <tr>
+              <td valign="top" align="center" width="50%">
+                    <table class="tsel" border="0">
+                          <!-- Images, first row -->
+                          <tr>
+                                <td><img class="selectors" id="webcamimg" src="http://www.webqr.com/vid.png" onclick="setwebcam()" align="left" /></td>
+                                <td><img class="selector" id="qrimg" src="http://www.webqr.com/cam.png" onclick="setimg()" align="right"/></td>
+                          </tr>
+                          <tr class="row">
+                                <td align="center" class="col l6 s12 offset-l4 offset-s2 offset-m2 ">
+                                      <div id="outdiv">
+                                      </div>
+                                </td>
+
+                          </tr>
+                    </table>
+              </td>
+        </tr>
+        <tr>
+              <td colspan="3" align="center">
+              <div id="result"></div>
+              </td>
+        </tr>
+      </table>
+    </div>&nbsp;
+
+  </div>
+
+  <footer class="page-footer green">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job.</p>
+          <a class="btn waves-effect waves-light green btn-flat white-text" href="aboutedtd.html">Meet the Team</a>
+
+
+        </div>
+      
+         <div class="col l3 m3 s12 offset-l3">
+          <h5 class="white-text">Contact Us</h5>
+          <p class="grey-text text-lighten-4">Like this page? Thank and appreciate us!</p>
+          <ul>
+            <li><a href="https://twitter.com/intent/tweet?screen_name=aravind_bad" class="twitter-mention-button" data-related="aravind_bad">Tweet to @aravind_bad</a></li>
+            <li><a href="https://twitter.com/intent/tweet?screen_name=grandhi_teja" class="twitter-mention-button" data-related="grandhi_teja,grandhi_teja">Tweet to @grandhi_teja</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="aboutedtd.html">AB & KT</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <canvas id="qr-canvas" width="800" height="600"></canvas>
+  <script type="text/javascript">load();</script>
+
+  <!-- Twitter Buttons -->
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+  </body>
+</html>

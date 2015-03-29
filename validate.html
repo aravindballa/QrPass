@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Sign In</title>
+
+  <!-- CSS  -->
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+
+  <script type="text/javascript">
+    function verify(){
+      var entermail=document.getElementById("email").value;
+      var enterpass=document.getElementById("password").value;
+
+      if(entermail == "someone@mail.com" && enterpass == "password")
+        open("main.html");
+
+      else alert("Invalid credentials. Please check");
+    }
+  </script>
+
+
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="container">
+      <div class="nav-wrapper"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right">
+          <li><a href="about.html">About</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      </div>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      
+      <h1 class="header center orange-text">Sign In</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Sign in with your account details to get access. </h5>
+      </div>
+      <br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h4 class="center light-blue-text"></h4>
+            <p class="center">Are you a new user?<br><br><a class="waves-effect waves-light btn center" href="register.html">Register</a></p>
+             
+        </div>
+        </div>
+
+
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h2 class="center teal-text"><i class="mdi-social-person"></i></h2>
+        
+            <form >
+            <div class="row">
+      <div class="input-field col s12">
+        <input id="email" type="email" class="validate">
+        <label for="email">Email</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="password" type="password" class="validate">
+        <label for="password">Password</label>
+        <br>
+        <br>
+      </div>
+      </form>
+    <div class="row center"><a href="" class="btn waves-effect waves-light center" onclick="verify()" >Sign in</a></div>
+    </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <br><br>
+
+    <div class="section">
+
+    </div>
+  </div>
+
+  <footer class="page-footer green">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job.</p>
+          <a class="btn waves-effect waves-light green btn-flat white-text" href="aboutedtd.html">Meet the Team</a>
+
+
+        </div>
+      
+         <div class="col l3 m3 s12 offset-l3">
+          <h5 class="white-text">Contact Us</h5>
+          <p class="grey-text text-lighten-4">Like this page? Thank and appreciate us!</p>
+          <ul>
+            <li><a href="https://twitter.com/intent/tweet?screen_name=aravind_bad" class="twitter-mention-button" data-related="aravind_bad">Tweet to @aravind_bad</a></li>
+            <li><a href="https://twitter.com/intent/tweet?screen_name=grandhi_teja" class="twitter-mention-button" data-related="grandhi_teja,grandhi_teja">Tweet to @grandhi_teja</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="aboutedtd.html">AB & KT</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+   <!-- Twitter Buttons -->
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+  </body>
+</html>
